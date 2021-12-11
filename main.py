@@ -16,7 +16,7 @@ ap.add_argument("-i", "--image", required=True,
 ap.add_argument("-w", "--width", type=float, required=True,
 	help="width of the left-most object in the image (in inches)")
 args = vars(ap.parse_args())
-<div class="open_grepper_editor" title="Edit & Save To Grepper"></div>
+
 # load the image, convert it to grayscale, and blur it slightly
 
 
@@ -36,10 +36,7 @@ cnts = imutils.grab_contours(cnts)
 # 'pixels per metric' calibration variable
 (cnts, _) = contours.sort_contours(cnts)
 pixelsPerMetric = None
-< div
 
-
-class ="open_grepper_editor" title="Edit & Save To Grepper" > < / div >
 
 # loop over the contours individually
 
@@ -62,10 +59,10 @@ for c in cnts:
 	# loop over the original points and draw them
 	for (x, y) in box:
 		cv2.circle(orig, (int(x), int(y)), 5, (0, 0, 255), -1)
-< div
 
 
-class ="open_grepper_editor" title="Edit & Save To Grepper" > < / div >
+
+
 
 # unpack the ordered bounding box, then compute the midpoint
 # between the top-left and top-right coordinates, followed by
@@ -89,10 +86,7 @@ cv2.line(orig, (int(tltrX), int(tltrY)), (int(blbrX), int(blbrY)),
 		 (255, 0, 255), 2)
 cv2.line(orig, (int(tlblX), int(tlblY)), (int(trbrX), int(trbrY)),
 		 (255, 0, 255), 2)
-< div
 
-
-class ="open_grepper_editor" title="Edit & Save To Grepper" > < / div >
 
 # compute the Euclidean distance between the midpoints
 
@@ -104,10 +98,6 @@ dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
 # (in this case, inches)
 if pixelsPerMetric is None:
 	pixelsPerMetric = dB / args["width"]
-< div
-
-
-class ="open_grepper_editor" title="Edit & Save To Grepper" > < / div >
 
 # compute the size of the object
 
@@ -127,4 +117,4 @@ cv2.waitKey(0)
 < div
 
 
-class ="open_grepper_editor" title="Edit & Save To Grepper" > < / div >
+
