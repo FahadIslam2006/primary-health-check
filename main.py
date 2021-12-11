@@ -114,7 +114,6 @@ cv2.putText(orig, "{:.1f}in".format(dimB),
 # show the output image
 cv2.imshow("Image", orig)
 cv2.waitKey(0)
-< div
 
 
 
